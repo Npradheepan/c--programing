@@ -1,0 +1,39 @@
+using System;
+
+namespace ConsoleNewPrograms
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string UserChoice = string.Empty;
+            do
+            {
+                Console.WriteLine("Enter your Target Number");
+                int UserTarget = int.Parse(Console.ReadLine());
+                int start = 0;
+                while (start <= UserTarget)
+                {
+                    Console.Write(start + "\n");
+                    start = start + 2;
+                }
+
+                do
+                {
+                    Console.WriteLine("Do wand to continue This process? Then Say yes or No");
+                    UserChoice = Console.ReadLine().ToUpper();
+
+                    if (UserChoice != "YES" && UserChoice != "NO")
+                    {
+                        Console.WriteLine("Your Enter is Wrong! please Enter Correct");
+                    }
+
+                } while (UserChoice != "YES" && UserChoice != "NO");
+            } while (UserChoice == "YES");
+            
+
+
+        }
+    }
+}
