@@ -1,0 +1,53 @@
+using System;
+
+namespace console_inheritance
+{
+   public class Angestelle
+    {
+        public string NachName;
+        public string VorName;
+        public string Email;
+        public int      Id;
+
+        public void PrintVollName()
+        {
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName);
+        }
+    }
+
+    public class vollzeitAngestelle : Angestelle
+    {
+        public float jahrsGehalt;
+    }
+
+    public class TeilzeitAngestelle : Angestelle
+    {
+        public float stundensGehalt; 
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            vollzeitAngestelle vollzeit = new vollzeitAngestelle();
+            vollzeit.NachName = "Nick";
+            vollzeit.VorName = "mular";
+            vollzeit.PrintVollName();
+            vollzeit.jahrsGehalt = 25000;
+            vollzeit.Id = 123978;
+            vollzeit.Email = "pradheepan@gmail.com";
+
+
+            TeilzeitAngestelle teilzeit = new TeilzeitAngestelle();
+            teilzeit.NachName = " john";
+            teilzeit.VorName = "mick";
+            teilzeit.PrintVollName();
+            teilzeit.stundensGehalt = 1500;
+            teilzeit.Id = 21396;
+            teilzeit.Email = "mick@gmail.com";
+
+
+           
+            
+        }
+    }
+}
