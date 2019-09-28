@@ -1,0 +1,17 @@
+using System;
+
+namespace ConsoleNewPrograms
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int number to input two method
+            Console.WriteLine("Enter  your Number");
+            int Number = Convert.ToInt16(Console.ReadLine());
+            int UserNumber = int.Parse(Console.ReadLine());
+
+
+        }
+    }
+}
