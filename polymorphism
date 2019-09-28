@@ -1,0 +1,62 @@
+using System;
+
+namespace console_poly
+{
+    //Hier ist the Base Class (parent Class)
+   public class Angestelle
+    {
+        public string NachName = "Müllar";
+        public string VorName ="David";
+        //base virtual der method in polymorphism
+        // die schreibung hidden  von  der vollzeit method
+        //tatsächlich abstration von the vollzeit mehtod
+        public virtual  void PrintAngesteller()
+        {
+            
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName);
+        }
+    }
+    // heir ist the Erste DrivedCalss  
+    //hier inheritance von die parent Class  
+    //override der method in polymorphism
+    public class vollzeitAngestelle : Angestelle
+    {
+        public override void PrintAngesteller()
+        {
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName + " " + "vollzeit");
+    
+        }
+        
+
+    }
+    // heir ist the Zweite DrivedCalss  
+    //hier inheritance von die parent Class  
+    public class TeilzeitAngestelle : Angestelle
+    {
+        //override der method in polymorphism
+        public  override void PrintAngesteller()
+        {
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName+" "+"teilzeit" );
+        }
+        
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Angestelle[] angestelles = new Angestelle[3];
+            angestelles[0] = new Angestelle();
+            angestelles[1] = new vollzeitAngestelle();
+            angestelles[2] = new TeilzeitAngestelle();
+
+            foreach(Angestelle mt in angestelles)
+            {
+                mt.PrintAngesteller();
+            }
+
+
+
+
+        }
+    }
+}
