@@ -1,0 +1,66 @@
+using System;
+
+namespace console_inherit_abstact
+{
+    //Hier ist the Base Class (parent Class)
+    // Die hat allgemeinen beschreibung über der Angesteller
+    //in diesen Parent class inhalt anderen Classen benutzen Können
+    // mehrere parent class konnte nicht inheritanze
+    //mehrere  level  classes  kann inheritanze
+    public class Angestelle
+    {
+        public string NachName;
+        public string VorName;
+        public string Email;
+        public int Id;
+
+        public virtual void PrintAngesteller()
+        {
+         // die schreibung hidden  von  der vollzeit method
+         //tatsächlich abstration von the vollzeit mehtod
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName);
+            Console.WriteLine("EmailID ={0} " + "\n" + "ID ={1}", Email, Id);
+        }
+    }
+    // heir ist the Erste DrivedCalss  
+    //hier inheritance von die parent Class  
+    public class vollzeitAngestelle : Angestelle
+    {
+        public new void PrintAngesteller()
+        {
+            Console.WriteLine("Angesteller VollName ist : {0}", NachName + " " + VorName + " " + "hidden diese schreibung die heiß contractor");
+
+        }
+        public float jahrsGehalt;
+
+    }
+    // heir ist the Zweite DrivedCalss  
+    //hier inheritance von die parent Class  
+    public class TeilzeitAngestelle : Angestelle
+    {
+        public float stundensGehalt;
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            vollzeitAngestelle vollzeit = new vollzeitAngestelle();
+            vollzeit.NachName = "Nick";
+            vollzeit.VorName = "mular";
+            vollzeit.jahrsGehalt = 25000;
+            vollzeit.Id = 123978;
+            vollzeit.Email = "Nick@gmail.com";
+            vollzeit.PrintAngesteller();
+
+
+            TeilzeitAngestelle teilzeit = new TeilzeitAngestelle();
+            teilzeit.NachName = " john";
+            teilzeit.VorName = "mick";
+            teilzeit.stundensGehalt = 1500;
+            teilzeit.Id = 21396;
+            teilzeit.Email = "mick@gmail.com";
+            teilzeit.PrintAngesteller();
+        }
+    }
+}
+
