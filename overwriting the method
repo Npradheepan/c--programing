@@ -1,0 +1,29 @@
+using System;
+
+namespace ConsoleApp3
+{
+    public class BasicClass
+    {
+        public virtual void Print()
+        {
+            Console.WriteLine("This Base Call prinding ");
+        }
+    }
+    public class DrivedClass : BasicClass
+    {
+        public override void Print()
+        {
+            Console.WriteLine("This DrivedCall prinding ");
+        }
+    }
+
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+        BasicClass C = new DrivedClass();
+            C.Print();
+        }
+    }
+}
