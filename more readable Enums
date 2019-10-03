@@ -1,0 +1,56 @@
+using System;
+
+ 
+  public  class   Enums
+   {
+    public static void Main(string[] args)
+    {
+        Customer[] customers = new Customer[3];
+        customers[0] = new Customer
+        {
+            Name = "mark",
+            Gender =  Gender.Male
+        };
+        customers[1] = new Customer
+        {
+            Name = "mery",
+            Gender = Gender.Female
+        };
+         customers[2] = new Customer
+        {
+            Name = "markas",
+            Gender = Gender.Unkown
+
+         };
+        foreach (Customer customer in customers)
+        {
+            Console.WriteLine("Name ={0}&& Gender {1}", customer.Name,GetGentder( customer.Gender));
+        }
+    }
+    public static string GetGentder(Gender gender)
+    {
+        switch (gender)
+        {
+            case Gender.Unkown:
+                return "Unkone";
+            case Gender.Male:
+                return "male";
+            case Gender.Female:
+                return "Female";
+            default:
+                return "invalid data detect";
+        }
+    }
+  }
+public enum Gender
+{
+    Unkown,
+    Male,
+    Female,
+}
+public class Customer
+{
+    public string Name { get; set; }
+    public Gender Gender { get; set; }
+}
+
