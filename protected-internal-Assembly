@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace AssemblyOne
+{
+    public class AssemblyOneClass1
+    {
+        protected internal int ID = 991;
+    }
+
+    public class AssemblyOneClass2
+    {
+        public void SampleMethod()
+        {
+            AssemlyOneClass1 A1 =  new AssemlyOneClass1();
+            Console.WriteLine (A1.ID);           
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AssemblyOne;
+
+namespace AsseblyTwo
+{
+    public class AssemblyTwoClass1 : AssemblyOneClass1
+    {
+        public void Print()
+        {
+            AssemblyOneClass1 A1 = new AssemblyOneClass1();
+            base.ID =  991;
+
+            AssemblyOneClass1 A2 = new AssemblyOneClass1();
+
+            A2.ID = 991;
+        }
+    }
+}
