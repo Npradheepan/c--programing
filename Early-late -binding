@@ -1,0 +1,34 @@
+using System;
+using System.Reflection;
+
+namespace ConsoleApp5
+{
+    public class MainProgram
+    {
+       private static void Main()
+        {
+            Assembly excecuteingAssembly = Assembly.GetExecutingAssembly();
+            Type CustomerType = excecuteingAssembly.GetType("ConsoleApp5.Customer");
+
+            object customerInstance = Activator.CreateInstance(CustomerType);
+            MethodInfo getFullNameMethod = CustomerType.GetMethod("GetFullName");
+            string[] parameters = new string[2];
+            parameters[0] = "Navaradnaraja";
+            parameters[1] = "pradheepan";
+            string fullName = (string)getFullNameMethod.Invoke(customerInstance, parameters);
+            Console.WriteLine("Full Name = {0}",fullName);
+
+
+            //Costomer C1 = new Costomer();
+            //string FullName = C1.GetFullName("Navaradnarajah", "Pradheepan");
+            //Console.WriteLine("Full Name = {0}" ,  FullName);
+        }
+    }
+    //public class Costomer
+    //{
+    //    public string GetFullName(string FirstName, string LastName)
+    //    {
+    //        return FirstName + " " + LastName;
+    //    }
+    //}
+}
