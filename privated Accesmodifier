@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp11
+{
+    class Customer
+    {
+        private int _id;
+
+        public int ID
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer Cus = new Customer();
+            
+            Console.WriteLine(Cus.ID);
+        }
+    }
+}
