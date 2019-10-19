@@ -10,7 +10,7 @@ namespace ConsoleApp7
     {
         static void Main(string[] args)
         {
-            AddNumbers(20, 30);
+            AddNumbers(20, 30, new int[] {10,40,60});
         }
         public static void AddNumbers(int firstNumber, int secondNumber)
         {
