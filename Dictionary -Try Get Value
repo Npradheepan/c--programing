@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+namespace Dictionary
+{
+    class Program
+    {
+       public static void Main( )
+        {
+            Custommer custommer1 = new Custommer()
+            {
+                ID = 101,
+                Name ="Theepan",
+                Salary = 10000,
+            };
+            Custommer custommer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "Kala",
+                Salary = 2500,
+            };
+            Custommer custommer3 = new Custommer()
+            {
+                ID = 103,
+                Name = "Rahaf",
+                Salary = 5000,
+            };
+            Dictionary<int, Custommer> dictioaryCustommers = new Dictionary<int, Custommer>();
+            dictioaryCustommers.Add(custommer1.ID, custommer1);
+            dictioaryCustommers.Add(custommer2.ID, custommer2);
+            dictioaryCustommers.Add(custommer3.ID, custommer3);
+            Custommer cust;
+            if (dictioaryCustommers.TryGetValue(102,out cust))
+            {
+                Console.WriteLine("DI = {0},Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            }
+            else
+            {
+                Console.WriteLine("The key Not Found");
+            }
+        }
+    }
+
+
+
+    public class Custommer
+    {
+        public int ID { get;  set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+    }
+}
