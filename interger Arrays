@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApp7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            AddNumbers(20, 30,new int[] {10,40,60});
+        }
+        public static void AddNumbers(int firstNumber, int secondNumber)
+        {
+            AddNumbers(firstNumber, secondNumber, null);
+        }
+        public static void AddNumbers(int firstNumber, int secondNumber, int[] restofNumbers)
+        {
+            int result = firstNumber +  secondNumber;
+            if(restofNumbers != null)
+            {
+                foreach(int i in restofNumbers)
+                {
+                    result += i;
+                }
+            }
+            Console.WriteLine("sum = " +result);
+        }
+
+    }
+}
