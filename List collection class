@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Dictionary
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Custommer custommer1 = new Custommer()
+            {
+                ID = 101,
+                Name = "Theepan",
+                Salary = 10000,
+            };
+            Custommer custommer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "Kala",
+                Salary = 2500,
+            };
+            Custommer custommer3 = new Custommer()
+            {
+                ID = 103,
+                Name = "Rahaf",
+                Salary = 5000,
+            };
+
+            List<Custommer> listcustommers = new List<Custommer>();
+            listcustommers.Add(custommer1);
+            listcustommers.Add(custommer2);
+            listcustommers.Add(custommer3);
+            if (listcustommers.Contains(custommer3))
+            {
+                Console.WriteLine("custommer 3 exist in the List");
+            }
+            else
+            {
+                Console.WriteLine("Customer3 object does not exist in the List ");
+            }
+        }
+    }
+
+    public class Custommer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+    }
+}
+
