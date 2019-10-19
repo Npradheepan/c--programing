@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Dictionary
+{
+    class Program
+    {
+       public static void Main( )
+        {
+            Custommer custommer1 = new Custommer()
+            {
+                ID = 101,
+                Name ="Theepan",
+                Salary = 10000,
+            };
+            Custommer custommer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "Kala",
+                Salary = 2500,
+            };
+            Custommer custommer3 = new Custommer()
+            {
+                ID = 103,
+                Name = "Rahaf",
+                Salary = 5000,
+            };
+
+            List<Custommer> custommers = new List<Custommer>();
+            custommers.Add(custommer1);
+            custommers.Add(custommer2);
+            custommers.Add(custommer3);
+            Dictionary<int, Custommer> dict = custommers.ToDictionary(cust => cust.ID, cust => cust);
+            foreach (KeyValuePair<int,Custommer>kvp in dict)
+            {
+                Console.WriteLine("Key = {0}", kvp.Key);
+                Custommer cust = kvp.Value;
+                Console.WriteLine("ID = {0}, Name ={1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            }
+
+
+            //dictionary convert to Arry
+            //Custommer[] custommers = new Custommer[3];
+            //custommers[0] = custommer1;
+            //custommers[1] = custommer2;
+            //custommers[2] = custommer3;
+            //Dictionary<int, Custommer> dict= custommers.ToDictionary( cust => cust.ID,  cust => cust);
+            // foreach (KeyValuePair<int,Custommer>kvp in dict)
+            // {
+            //     Console.WriteLine("Key = {0}", kvp.Key);
+            //     Custommer cust = kvp.Value;
+            //     Console.WriteLine("ID = {0}, Name ={1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            // }
+
+
+            //Dictionary<int, Custommer> dictioaryCustommers = new Dictionary<int, Custommer>();
+            //dictioaryCustommers.Add(custommer1.ID, custommer1);
+            //dictioaryCustommers.Add(custommer2.ID, custommer2);
+            //dictioaryCustommers.Add(custommer3.ID, custommer3);
+
+
+
+            //dictioaryCustommers.Clear();
+
+            //dictioaryCustommers.Remove(999);
+
+            //Console.WriteLine("Total Iterm  ={0}", dictioaryCustommers.Count(kvp=>kvp.Value.Salary >= 5000));
+            //Custommer cust;
+            //if (dictioaryCustommers.TryGetValue(102,out cust))
+            //{
+            //    Console.WriteLine("DI = {0},Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The key Not Found");
+            //}
+        }
+    }
+
+
+
+    public class Custommer
+    {
+        public int ID { get;  set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+    }
+}
+ 
