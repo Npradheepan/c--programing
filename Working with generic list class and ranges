@@ -1,0 +1,108 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Dictionary
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Custommer custommer1 = new Custommer()
+            {
+                ID = 101,
+                Name = "Theepan",
+                Salary = 1000,
+                Type = "Retailcustommer",
+            };
+            Custommer custommer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "Kala",
+                Salary = 2000,
+                Type = "Retailcustommerv",
+            };
+            Custommer custommer3 = new Custommer()
+            {
+                ID = 115,
+                Name = "Rahaf",
+                Salary = 5000,
+                Type = "Retailcustommer",
+            };
+            Custommer custommer4 = new Custommer()
+            {
+                ID = 107,
+                Name = "john",
+                Salary = 4000,
+                Type = "CorporateCustommer",
+            };
+            Custommer custommer5 = new Custommer()
+            {
+                ID = 109,
+                Name = "March",
+                Salary = 11000,
+                Type = "CorporateCustommer",
+            };
+
+            List<Custommer> Listcustommers = new List<Custommer>();
+            Listcustommers.Add(custommer1);
+            Listcustommers.Add(custommer2);
+            Listcustommers.Add(custommer3);
+
+            List<Custommer> listCorporateCustommers = new List<Custommer>();
+            listCorporateCustommers.Add(custommer4);
+            listCorporateCustommers.Add(custommer5);
+
+
+            Listcustommers.InsertRange(0, listCorporateCustommers);
+
+            Listcustommers.RemoveAll(x =>x.Type == "CorporateCustommer");
+
+            foreach (Custommer c in Listcustommers)
+            {
+                Console.WriteLine("ID = {0},Name = {1}, Salary = {2},Type ={3}", c.ID, c.Name, c.Name, c.Type);
+            }
+
+
+            //-------------------------------------------------------------//
+            //Listcustommers.InsertRange(0, listCorporateCustommers);
+
+            //Listcustommers.Remove(custommer3);
+
+            //foreach (Custommer c in Listcustommers)
+            //{
+            //    Console.WriteLine("ID = {0},Name = {1}, Salary = {2},Type ={3}", c.ID, c.Name, c.Name, c.Type);
+            //}
+
+            //-----------------------------------------------------------------------//
+            //Listcustommers.InsertRange(0, listCorporateCustommers);
+            //foreach (Custommer c in Listcustommers)
+            //{
+            // Console.WriteLine("ID = {0},Name = {1}, Salary = {2},Type ={3}", c.ID, c.Name, c.Name, c.Type);
+            //}
+            //--------------------------------------------------//
+            //Get Rang Function
+            //Listcustommers.AddRange(listCorporateCustommers);
+            //List<Custommer> custommers = Listcustommers.GetRange(3, 2);
+            //foreach (Custommer c in custommers)
+            //{
+            //    Console.WriteLine("ID = {0},Name = {1}, Salary = {2},Type ={3}", c.ID, c.Name, c.Name, c.Type);
+            //}
+            //------------------------------------------------//
+            //Range Function
+            //Listcustommers.AddRange(listCorporateCustommers);
+            //foreach(Custommer c in Listcustommers)
+            //{
+            //    Console.WriteLine("ID = {0},Name = {1}, Salary = {2},Type ={3}", c.ID, c.Name, c.Name, c.Type);
+            //}
+
+        }
+    }
+    public class Custommer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+        public string Type { get; set; }
+    }
+}
