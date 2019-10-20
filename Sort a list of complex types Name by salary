@@ -1,0 +1,109 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp10
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Custommer customer1 = new Custommer()
+            {
+                ID = 101,
+                Name = "Mark",
+                Salary = 43000
+
+            };
+
+            Custommer customer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "suresh",
+                Salary = 105000
+
+            };
+            Custommer customer3 = new Custommer()
+            {
+                ID = 178,
+                Name = "Mayan",
+                Salary = 25000
+
+            };
+            Custommer customer4 = new Custommer()
+            {
+                ID = 107,
+                Name = "Ramash",
+                Salary = 35000
+
+            };
+            Custommer customer5= new Custommer()
+            {
+                ID = 198,
+                Name = "Pra",
+                Salary = 15000
+            };
+
+            List<Custommer> listcustommers = new List<Custommer>();
+            listcustommers.Add(customer1);
+            listcustommers.Add(customer2);
+            listcustommers.Add(customer3);
+            listcustommers.Add(customer4);
+            listcustommers.Add(customer5);
+
+            Console.WriteLine("Before shorting the the List");
+            foreach (Custommer C in listcustommers)
+            {
+                Console.WriteLine(C.Salary);
+            }
+            listcustommers.Sort();
+            Console.WriteLine("after shorting the the List");
+            foreach (Custommer C in listcustommers)
+            {
+                Console.WriteLine(C.Salary);
+            }
+            SortByName sortByName = new SortByName();
+            listcustommers.Sort(sortByName);
+            Console.WriteLine("Sorting by Name");
+            foreach (Custommer C in listcustommers)
+            {
+                Console.WriteLine(C.Name);
+            }
+
+        }
+    }
+
+    public class SortByName : IComparer <Custommer>
+    {
+        public int Compare(Custommer x, Custommer y)
+        {
+            return x.Name.CompareTo(y.Name);
+        }
+    }
+    public class Custommer: IComparable<Custommer>
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+        public int CompareTo(Custommer other)
+        {
+            return this.Salary.CompareTo(other.Salary);
+         }
+
+        //public int CompareTo(Custommer other)
+        //{
+        //    return this.Name.CompareTo(other.Name);
+        // }
+        //public int CompareTo(Custommer other)
+        //{
+        //    if (this.Salary > other.Salary)
+        //        return 1;
+        //    else if (this.Salary < other.Salary)
+        //        return -1;
+        //    else
+        //        return 0;
+        //  }
+
+
+    }
+}
