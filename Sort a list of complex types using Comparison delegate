@@ -57,7 +57,7 @@ namespace ConsoleApp10
             {
                 Console.WriteLine(c.ID);
             }
-
+            //listcustommers.Sort(delegate(Custommer c1,Custommer c2){ return c1.ID.CompareTo(customer2.ID); });
             listcustommers.Sort(CustommerCompare);
 
             Console.WriteLine(" after sorting the List ");
