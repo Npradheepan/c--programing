@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp10
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Custommer customer1 = new Custommer()
+            {
+                ID = 101,
+                Name = "Mark",
+                Salary = 43000
+
+            };
+
+            Custommer customer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "suresh",
+                Salary = 105000
+
+            };
+            Custommer customer3 = new Custommer()
+            {
+                ID = 178,
+                Name = "Mayan",
+                Salary = 25000
+
+            };
+            Custommer customer4 = new Custommer()
+            {
+                ID = 107,
+                Name = "Ramash",
+                Salary = 35000
+
+            };
+            Custommer customer5= new Custommer()
+            {
+                ID = 198,
+                Name = "Pra",
+                Salary = 15000
+            };
+
+            List<Custommer> listcustommers = new List<Custommer>();
+            listcustommers.Add(customer1);
+            listcustommers.Add(customer2);
+            listcustommers.Add(customer3);
+            listcustommers.Add(customer4);
+            listcustommers.Add(customer5);
+
+            Comparison<Custommer> CustommerCompare = new Comparison<Custommer>(CompareCustommer);
+
+            Console.WriteLine("Before sorting the List ");
+            foreach (Custommer c in listcustommers)
+            {
+                Console.WriteLine(c.ID);
+            }
+
+            listcustommers.Sort(CustommerCompare);
+
+            Console.WriteLine(" after sorting the List ");
+            foreach (Custommer c in listcustommers)
+            {
+                Console.WriteLine(c.ID);
+            }
+        }
+        private static int CompareCustommer(Custommer x, Custommer y)
+        {
+            return x.ID.CompareTo(y.ID);
+        }
+    }
+
+   
+    public class Custommer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+    }
+}
