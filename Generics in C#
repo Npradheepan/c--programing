@@ -1,0 +1,36 @@
+using System;
+
+
+//Genric method make to iindiapenden
+namespace pradheepan
+{
+    public class program
+    {
+        private static void main()
+        {
+            bool Equal = calculator<string>.AreEqual(AB, AB)
+           // bool Equal = calculator.AreEqual <string>(AB, AB);
+           // bool Equal = calculator<T>.AreEqual(1, 2);
+            if (Equal)
+            {
+                Console.WriteLine("Equal");
+            }
+            else
+            {
+                Console.WriteLine("Not Equal");
+            }
+        }
+    }
+    public class calculator<T>
+    {
+        public static bool AreEqual<T>(<T> Value1, <T> value2)
+        //public static bool AreEqual <T>(<T> Value1, <T> value2)
+        // public static bool AreEqual(object Value1, object value2)
+        // public static bool AreEqual(int Value1, int value2)
+        {
+            //return Value1 == value2;
+            return value1.Equals(value2);
+        }
+    }
+
+}
