@@ -1,0 +1,19 @@
+using System;
+
+namespace training_project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        //what is the value here . that come to resuld
+        // single line we cann get the resuld
+            int? TicketsOneSale = null;
+
+            int AvailableTickets = TicketsOneSale ?? 0;
+
+            Console.WriteLine("AvailebleTickets =  {0}", AvailableTickets);
+         
+        }
+    }
+}
