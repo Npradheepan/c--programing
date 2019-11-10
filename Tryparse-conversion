@@ -1,0 +1,24 @@
+using System;
+
+namespace training_project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        //actualy that is a bool Datatype
+            string strNumber = "100GH";
+            int Result = 0;
+            bool IsconvertionSuccessfull = int.TryParse(strNumber, out Result);
+            if (IsconvertionSuccessfull)
+            {
+                Console.WriteLine(Result);
+            }
+            else
+            {
+                Console.WriteLine("please enter the Value Number");
+            }
+         
+        }
+    }
+}
