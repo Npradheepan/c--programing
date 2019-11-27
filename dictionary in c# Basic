@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer Cus1 = new Customer()
+            {
+                ID = 101,
+                Name = "Pradheepan",
+                Salary = 3000
+            };
+            Customer Cus2 = new Customer()
+            {
+                ID = 121,
+                Name = "dheepan",
+                Salary = 8000
+            };
+            Customer Cus3 = new Customer()
+            {
+                ID = 109,
+                Name = "pdheepan",
+                Salary = 4000
+            };
+
+        Dictionary<int, Customer> disctionarycustomers = new Dictionary<int, Customer>();
+            disctionarycustomers.Add(Cus1.ID, Cus1);
+            disctionarycustomers.Add(Cus2.ID, Cus2);
+            disctionarycustomers.Add(Cus3.ID, Cus3);
+            
+        Customer customer109 = disctionarycustomers[109];
+        Console.WriteLine("ID = {0}, Name {1}, Salary {2}", customer109.ID, customer109. Name, customer109.Salary);
+    }
+    }
+    public class Customer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+    }
+    
+    ****************************************************************************************************************************
+  using System;
+  using System.Collections.Generic;
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer Cus1 = new Customer()
+            {
+                ID = 101,
+                Name = "Pradheepan",
+                Salary = 3000
+            };
+            Customer Cus2 = new Customer()
+            {
+                ID = 121,
+                Name = "dheepan",
+                Salary = 8000
+            };
+            Customer Cus3 = new Customer()
+            {
+                ID = 109,
+                Name = "pdheepan",
+                Salary = 4000
+            };
+
+        Dictionary<int, Customer> disctionarycustomers = new Dictionary<int, Customer>();
+            disctionarycustomers.Add(Cus1.ID, Cus1);
+            disctionarycustomers.Add(Cus2.ID, Cus2);
+            disctionarycustomers.Add(Cus3.ID, Cus3);
+        Customer customer109 = disctionarycustomers[109];
+        foreach(KeyValuePair<int, Customer> customerkeyValuePair in disctionarycustomers)
+        {
+            Console.WriteLine("ID = {0}", customerkeyValuePair.Key);
+            Customer cust = customerkeyValuePair.Value;
+            Console.WriteLine("Name = {0}, ID ={1}, Salary = {2}", cust.Name, cust.ID, cust.Salary);
+            Console.WriteLine("*********************************************************");
+        }
+        //Console.WriteLine("ID = {0}, Name {1}, Salary {2}", customer109.ID, customer109. Name, customer109.Salary);
+    }
+    }
+    public class Customer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+
+    }
+
+
+
+    
+
