@@ -53,3 +53,31 @@ namespace ConsoleApp2
         }
     }
 }
+
+// can pass that argument  so
+
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            AddNumbers(40, 29, new object[] { 30, 12, 60 });
+        }
+        public static void AddNumbers(int firstNumber, int secondNumber, params object[] restofNumbers)
+        {
+            int result = firstNumber + secondNumber;
+            if (restofNumbers != null)
+            {
+                foreach (int i in restofNumbers)
+                {
+                    result += i;
+                }
+            }
+            Console.WriteLine("Sum = " + result);
+        }
+    }
+}
+
