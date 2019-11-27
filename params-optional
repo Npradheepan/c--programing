@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Parameter 
+{
+    public class Program
+    {
+        public static void main()
+        {
+            AddNumbers(40 + 20);
+        }
+        public static void AddNumbers(int firstNumber, int secondNumber, params object[] restofNumbers)
+        {
+            int result = firstNumber + secondNumber;
+            if (restofNumbers != null)
+            {
+                foreach (int i in restofNumbers)
+                {
+                    result += i;
+                }
+            }
+            Console.WriteLine("Sum = " + result);
+        }
+    }
+}
