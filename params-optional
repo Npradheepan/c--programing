@@ -9,7 +9,7 @@ namespace Parameter
     {
         public static void main()
         {
-            AddNumbers(40 + 20);
+            AddNumbers(40, 20);
         }
         public static void AddNumbers(int firstNumber, int secondNumber, params object[] restofNumbers)
         {
