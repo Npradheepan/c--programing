@@ -28,9 +28,7 @@ namespace Parameter
 
 
 //more numbers in this example
-
 using System;
-
 namespace ConsoleApp2
 {
     class Program
