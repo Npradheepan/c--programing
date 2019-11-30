@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var cars = new List<string>();
+            cars.Add("LKWS");
+            cars.Add("PKWS");
+            cars.Add("Motorräder");
+
+            foreach (string car in cars)
+            {
+                if (car.Equals(cars.First()))
+                {
+                    Console.WriteLine("First car: {0}", car);
+                }
+                   
+                else if (car.Equals(cars.Last()))
+                {
+                    Console.WriteLine("Last car: {0}", car);
+                }
+                    
+                else
+                {
+                    Console.WriteLine(car);
+                }
+            }
+                    
+            Console.Read();
+        }
+    }
+}
