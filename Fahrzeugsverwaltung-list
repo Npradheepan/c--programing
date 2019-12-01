@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+               // Daten List  Alle Fahrzeug
+          
+                List<Fahrzeugs> FahrzeugList = new List<Fahrzeugs>();
+
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW",  Model = "LKW MN 6532", Color = "Black", Erstellungsjahre = 2018, kennenZeichen = 4128, pries =2800 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW", Model = "LKW ST 9845", Color = "Black", Erstellungsjahre = 2018, kennenZeichen = 4528, pries = 2800 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "PKW BF 5873" , Color = "Blue ", Erstellungsjahre = 2010, kennenZeichen = 5712, pries = 3700 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Porsche", Model = "PKW CT 9834", Color = "DarkGreen ", Erstellungsjahre = 2011, kennenZeichen = 4192, pries = 2840 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW", Model = "PKW MF 6743", Color = "Blue ", Erstellungsjahre = 2007, kennenZeichen = 6942, pries = 550 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "Motorräd BB 9847", Color = "Black", Erstellungsjahre = 2012, kennenZeichen = 1212, pries = 900 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "Motorräd GT 4047", Color = "Crimson ", Erstellungsjahre = 2010, kennenZeichen = 3419 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "LKW ML 0912", Color = "Red ", Erstellungsjahre = 2000, kennenZeichen = 1262, pries = 1000 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "PKW PO 1010", Color = "DarkRed ", Erstellungsjahre = 2002, kennenZeichen = 4102, pries = 950 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "Motorräd LS 2880", Color = "DarkGreen ", Erstellungsjahre = 1999, kennenZeichen = 1761, pries = 3400 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "PKW EP 7200", Color = "DarkViolet ", Erstellungsjahre = 2012, kennenZeichen = 3498, pries = 4500 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW", Model = "Motorräd IP 4500", Color = "Black", Erstellungsjahre = 2013, kennenZeichen = 5982, pries = 980 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW", Model = "PKW YX 2300", Color = "DarkViolet ", Erstellungsjahre = 2014, kennenZeichen = 5657, pries = 8761 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "Motorräd", Color = "DarkTurquoise ", Erstellungsjahre = 2018, kennenZeichen = 6768, pries = 2810 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "PKW-GT:1220", Color = "DeepPink ", Erstellungsjahre = 2015, kennenZeichen = 1345, pries = 750 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "PKW XX 9000", Color = "DeepPink ", Erstellungsjahre = 2012, kennenZeichen = 2346, pries = 4800 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Volkswagen", Model = "PKW CA 7636", Color = "DeepPink ", Erstellungsjahre = 2012, kennenZeichen = 3467, pries = 4100 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "Motorräd KH 6012", Color = "DarkTurquoise ", Erstellungsjahre = 2011, kennenZeichen = 2347, pries = 1500 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "Mercedes-Benz", Model = "Motorräd CY 0902", Color = "DarkTurquoise ", Erstellungsjahre = 2018, kennenZeichen = 4567, pries = 4300 });
+            FahrzeugList.Add(new Fahrzeugs() { Hersteller = "BMW", Model = "Motorräd XO 3031", Color = "Black", Erstellungsjahre = 2016, kennenZeichen = 8764 });
+
+            List<Fahrzeugs> sortedList = FahrzeugList.OrderBy(o => o.kennenZeichen).ToList();
+
+                foreach (Fahrzeugs zeuge in sortedList)
+                    Console.WriteLine(zeuge.ToString());
+                     Console.Read();
+        }
+
+        private static void lkwfahrzegs()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    // Datan Properties
+        class Fahrzeugs
+    {
+        public string Hersteller { get; set; }
+        public string Model { get; set; }
+        public string Color { get; set; }
+        public int Erstellungsjahre { get; set; }
+        public int kennenZeichen { get; set; }
+        public decimal pries { get; set; }
+       
+        // override zu Tostring
+            public override string ToString()
+            {
+                return String.Format(" kennenZeichen: {0},   Hersteller: {1},  Color: {2},model :{3}, pries in Euro:{4} + Mehrewerd stuer :18% \n" , kennenZeichen, Hersteller, Color, Model, pries);
+           
+            }
+        }
+   
+}
