@@ -1,0 +1,12 @@
+string name = (Console.ReadLine());
+Console.WriteLine("Is " + name + " ok?");
+Console.WriteLine("\n(Y)es\n(N)o");
+char ansys = Console.ReadKey();
+if (ansys = ConsoleKey.Y)
+    Console.Clear();
+else
+{
+    Console.WriteLine();
+    Console.WriteLine("Enter letters only");
+}
+*********************************************************************************************************************************************
