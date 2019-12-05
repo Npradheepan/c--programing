@@ -1,0 +1,368 @@
+//Eception handling
+using System;
+
+namespace exercise
+{
+
+    public class student
+    {
+        private string _Name;
+        private int _Id;
+        private int _mark = 45;
+
+        public void SetId(int Id)
+        {
+            if(Id<= 0)
+            {
+                throw new Exception("ID kann nicht Null or Emty sein");
+            }
+            this._Id = Id;
+        }
+        public int GetId()
+        {
+            return this._Id;
+        }
+        public void SetMark(int Mark)
+        {
+            if(Mark<= 0)
+            {
+                throw new Exception("Mark kann not negative sein");
+            }
+            this._mark = Mark;
+        }
+        public int GetMark()        {
+            return this._mark; 
+        }
+        public void SetName(string Name)
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Name kann sein Null oder Empty");
+            }
+            this._Name = Name;
+        }
+        public string GetName()
+        {
+            if (string.IsNullOrEmpty(this._Name))
+            {
+                return "Keine Name";
+            }
+            else
+            {
+                return this._Name;
+            }
+            
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student studenten = new student();
+            studenten.SetId(789);
+            studenten.SetMark(67);
+            studenten.SetName("pradheepan");
+
+            Console.WriteLine("student Id: {0},student Mark : {1},stdent Name: {2}", studenten.GetId(), studenten.GetMark(), studenten.GetName());
+        }
+    }
+}
+***********************************************************************************************************************************
+
+using System;
+
+namespace exercise
+{
+
+    public class student
+    {
+        private string _Name;
+        private int _Id;
+        private int _mark = 45;
+
+        public void SetId(int Id)
+        {
+            if(Id<= 0)
+            {
+                throw new Exception("ID kann nicht Null or Emty sein");
+            }
+            this._Id = Id;
+        }
+        public int GetId()
+        {
+            return this._Id;
+        }
+        public void SetMark(int Mark)
+        {
+            if(Mark<= 0)
+            {
+                throw new Exception("Mark kann not negative sein");
+            }
+            this._mark = Mark;
+        }
+        public int GetMark()        {
+            return this._mark; 
+        }
+        public void SetName(string Name)
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Name kann sein Null oder Empty");
+            }
+            this._Name = Name;
+        }
+        public string GetName()
+        {
+            // ternary operator
+            return  string.IsNullOrEmpty(this._Name)?  "Keine Name" :this._Name;
+  
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student studenten = new student();
+            studenten.SetId(789);
+            studenten.SetMark(67);
+            studenten.SetName("pradheepan");
+
+            Console.WriteLine("student Id: {0},student Mark : {1},stdent Name: {2}", studenten.GetId(), studenten.GetMark(), studenten.GetName());
+        }
+    }
+}
+******************************************************************************************************************************
+
+// diese  set und get methode
+
+using System;
+
+namespace exercise
+{
+
+    public class student
+    {
+        private string _Name;
+        private int _Id;
+        private int _mark = 45;
+
+        public int  Id
+        {
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new Exception("ID kann nicht Null or Emty sein");
+                }
+                this._Id = value;
+            }
+            get
+            {
+                return this._Id;
+            }
+            
+        }
+        
+        public void SetMark(int Mark)
+        {
+            if(Mark<= 0)
+            {
+                throw new Exception("Mark kann not negative sein");
+            }
+            this._mark = Mark;
+        }
+        public int GetMark()        {
+            return this._mark; 
+        }
+        public string Name
+        {
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Name kann sein Null oder Empty");
+                }
+                this._Name = value;
+            }
+            get
+            {
+                // ternary operator
+                return string.IsNullOrEmpty(this._Name) ? "Keine Name" : this._Name;
+            }   
+        }       
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student studenten = new student();
+            studenten.Id=789;
+            studenten.SetMark(67);
+            studenten.Name="pradheepan";
+
+            Console.WriteLine("student Id: {0},student Mark : {1},stdent Name: {2}", studenten.Id, studenten.GetMark(), studenten.Name);
+        }
+    }
+}
+***********************************************************************************************************************************
+
+using System;
+
+namespace exercise
+{
+
+    public class student
+    {
+        private string _Name;
+        private int _Id;
+        private int _mark = 45;
+        // wir wollte nicht  hier schreiben
+        //private string Email;
+        //private string stadt;
+
+        public string Email { get; set; }
+        public string Stadt { get; set; }
+        public int  Id
+        {
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new Exception("ID kann nicht Null or Emty sein");
+                }
+                this._Id = value;
+            }
+            get
+            {
+                return this._Id;
+            }
+            
+        }
+        
+        public void SetMark(int Mark)
+        {
+            if(Mark<= 0)
+            {
+                throw new Exception("Mark kann not negative sein");
+            }
+            this._mark = Mark;
+        }
+        public int GetMark()        {
+            return this._mark; 
+        }
+        public string Name
+        {
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Name kann sein Null oder Empty");
+                }
+                this._Name = value;
+            }
+            get
+            {
+                // ternary operator
+                return string.IsNullOrEmpty(this._Name) ? "Keine Name" : this._Name;
+            }   
+        }       
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student studenten = new student();
+            studenten.Id=789;
+            studenten.SetMark(67);
+            studenten.Name="pradheepan";
+
+            Console.WriteLine("student Id: {0},student Mark : {1},stdent Name: {2}", studenten.Id, studenten.GetMark(), studenten.Name);
+        }
+    }
+}
+**********************************************************************************************************************************
+using System;
+
+namespace exercise
+{
+
+    public class student
+    {
+        private string _Name;
+        private int _Id;
+        private int _mark = 45;
+        // wir wollte nicht  hier schreiben
+        //private string Email;
+        //private string stadt;
+
+        public string Email { get; set; }
+        public string Stadt { get; set; }
+        //public string Email
+        //{
+        //    get { return _Email; }
+        //    set { _Email = value; }
+        //}
+        //public string Email
+        //{
+        //    get { return this. _Email; }
+        //    set {this. _Email = value; }
+        //}
+
+        public int  Id
+        {
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new Exception("ID kann nicht Null or Emty sein");
+                }
+                this._Id = value;
+            }
+            get
+            {
+                return this._Id;
+            }
+            
+        }
+        
+        public void SetMark(int Mark)
+        {
+            if(Mark<= 0)
+            {
+                throw new Exception("Mark kann not negative sein");
+            }
+            this._mark = Mark;
+        }
+        public int GetMark()        {
+            return this._mark; 
+        }
+        public string Name
+        {
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Name kann sein Null oder Empty");
+                }
+                this._Name = value;
+            }
+            get
+            {
+                // ternary operator
+                return string.IsNullOrEmpty(this._Name) ? "Keine Name" : this._Name;
+            }   
+        }       
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student studenten = new student();
+            studenten.Id=789;
+            studenten.SetMark(67);
+            studenten.Name="pradheepan";
+
+            Console.WriteLine("student Id: {0},student Mark : {1},stdent Name: {2}", studenten.Id, studenten.GetMark(), studenten.Name);
+        }
+    }
+}
