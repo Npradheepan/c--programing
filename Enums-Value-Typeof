@@ -1,3 +1,4 @@
+1)
 using System;
 
 namespace EnumsExsample
@@ -21,6 +22,35 @@ namespace EnumsExsample
     public enum Gender
     {
         unknow,
+        Male,
+        Female,
+    }
+}
+*****************************************************************************************************************************************
+2)
+using System;
+
+namespace EnumsExsample
+{
+    public class Enums
+    {
+        public static void Main(string[] args) 
+        {
+            short []  values= (short[])Enum.GetValues(typeof(Gender));
+            foreach (short value in values)
+            {
+                Console.WriteLine(value);
+            }
+            string[] Names = Enum.GetNames(typeof(Gender));
+            foreach (string Name in Names)
+            {
+                Console.WriteLine(Name);
+            }
+        }
+    }
+    public enum Gender :short
+    {
+        unknow =1,
         Male,
         Female,
     }
