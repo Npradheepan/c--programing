@@ -2,28 +2,62 @@ using System;
 using System.Collections.Generic;
 
 
-    public class MainProgram
+public class MainProgram
+{
+    private static void Main()
     {
-        private static void Main()
-        {
-            Calculator.Add(10, 20);
-        }
+        Calculator.Add(10, 20);
     }
-    public class Calculator
+}
+public class Calculator
+{
+    [Obsolete ]
+    public static int Add(int FirstNumber, int SecondNumber)
     {
-        public static int Add(int FirstNumber, int SecondNumber)
-        {
         return FirstNumber + SecondNumber;
-         }
-    
-        public static int Add(List<int> Numbers)
-        {
-           int Sum = 0;
-           foreach(int number in Numbers)
-            {
-                Sum = Sum + Numbers;
-            }
-        return Sum;
-        }
     }
+
+    public static int Add(List<int> Numbers)
+    {
+        int Sum = 0; 
+        foreach (int number in Numbers)
+        {
+            Sum = Sum + number;
+        }
+        return Sum;
+    }
+}
+*************************************************************************************************************************************
+
+2)
+
+using System;
+using System.Collections.Generic;
+
+
+public class MainProgram
+{
+    private static void Main()
+    {
+        Calculator.Add(new List<int>() { 10, 20,30 });
+    }
+}
+public class Calculator
+{
+    [ObsoleteAttribute("Use Add(List<List>Numbers)Methode",true)]
+    public static int Add(int FirstNumber, int SecondNumber)
+    {
+        return FirstNumber + SecondNumber;
+    }
+
+    public static int Add(List<int> Numbers)
+    {
+        int Sum = 0; 
+        foreach (int number in Numbers)
+        {
+            Sum = Sum + number;
+        }
+        return Sum;
+    }
+}
 
