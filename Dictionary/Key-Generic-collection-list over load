@@ -1,0 +1,182 @@
+1)
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            country country1 = new country() { Code = "AUS", Name = "Australia", capital = "Canberra" };
+            country country2 = new country() { Code="AFG", Name ="Afghanistan", capital = "Kabul" };
+            country country3 = new country() { Code="ALB", Name= "Albania", capital = "Tirana" };
+            country country4 = new country() { Code ="ALG", Name ="Algeria" , capital ="Algiers" };
+            country country5 = new country() { Code ="AND", Name ="Andorra", capital =" AndorralaVella" };
+            country country6 = new country() { Code="ANG", Name ="Angola", capital ="Luanda" };
+            country country7 = new country() { Code = "ANT", Name = "AntiguaBarbuda:" , capital ="SaintJohn"};
+
+            List<country> countrieslist = new List<country>();
+            countrieslist.Add(country1);
+            countrieslist.Add(country2);
+            countrieslist.Add(country3);
+            countrieslist.Add(country4);
+            countrieslist.Add(country5);
+            countrieslist.Add(country6);
+            countrieslist.Add(country7);
+
+            string UserChoice = string.Empty;
+            do
+            {
+                Console.WriteLine("Please enter the Country Code");
+                string strEnterCode = Console.ReadLine().ToUpper();
+                country resultCountry =  countrieslist.Find(country => country.Code == strEnterCode);
+            
+                if (resultCountry == null)
+                {
+                    Console.WriteLine(" your Select Not Fill up");
+                }
+
+                else
+                {
+                    Console.WriteLine("Your selected coutry  thoer capital of : {0} , {1} ", resultCountry.Name, resultCountry.capital);
+                }
+                    do
+                    {
+                        Console.WriteLine("Do have Continue This Selection? YES OR NO");
+                    UserChoice = Console.ReadLine().ToUpper();
+
+                    } while ( UserChoice != "YES" &&  UserChoice != "NO");
+
+            } while ( UserChoice =="YES");
+
+
+            //country country8 = new country() { Name ="Argentina" , capital ="BuenosAires"};
+            //country country9 = new country() { Name ="Armenia", capital ="Yerevan" };
+            //country country10 = new country() { Name ="Austria", capital ="Vienna" };
+            //country country11= new country() { Name ="Azerbaijan", capital =" Baku" };
+            //country country12= new country() { Name ="Bahamas" , capital ="Nassau" };
+            //country country13= new country() { Name ="Bahrain", capital ="Manama" };
+            //country country14= new country() { Name ="Bangladesh" , capital ="Dhaka" };
+            //country country15= new country() { Name ="Barbados", capital="Bridgetown" };
+            //country country16= new country() { Name ="Belarus", capital="Minsk" };
+            //country country17= new country() { Name ="Belgium", capital="Brussels"};
+            //country country18= new country() { Name ="Belize", capital="Belmopan"};
+            //country country19= new country() { Name ="Benin", capital="PortoNovo" };
+            //country country20= new country() { Name ="Bhutan", capital="Thimphu" };
+            //country country21= new country() { Name="Botswana", capital="Gaborone"};
+            //country country22= new country() { Name = "Brazil", capital="Brasili" };
+            //country country23 = new country() { Name = "Brunei", capital="BandarSeriBegawan"};
+            //country country24= new country() { Name="Bulgaria", capital="Sofia"};
+            //country country25= new country() { Name="BurkinaFaso", capital="Ouagadougou"};
+            //country country26= new country() { Name ="Cambodia", capital="PhnomPenh"};
+            //country country27= new country() { Name ="Cameroon", capital="Yaounde"};
+            //country country28= new country() { Name="Canada", capital="Ottawa" };
+            //country country29= new country() {Name="CapeVerde", capital="Praia" };
+            //country country30= new country() {Name="Chad", capital="Djamena" };
+            //country country31= new country() {Name ="Chile",capital="Santiago" };
+            //country country32= new country() { Name="China", capital="Beijing"};
+            //country country33= new country() { Name="Colombia" , capital="Bogota"};
+            //country country34= new country() { Name="Comoros", capital="Moroni" };
+            //country country35= new country() { Name="Croatia", capital="Zagreb" };
+            //country country36= new country() { Name="Cuba", capital="Havana" };
+            //country country37= new country() { Name="Cyprus", capital ="Nicosia"}; 
+            //country country38= new country() { Name="CzechRepublic", capital="Prague" };
+            //country country39= new country() {Name="Denmark", capital="Copenhagen"};
+
+            //country country40 = new country() { };
+            //country country41= new country() { };
+            //country country42 = new country() { };
+            //country country43= new country() { };
+            //country country44 = new country() { };
+            //country country45 = new country() { };
+            //country country46 = new country() { };
+            //country country47 = new country() { };
+            //country country48 = new country() { };
+            //country country49 = new country() { };
+            //country country50 = new country() { };
+            //country country51 = new country() { };
+            //country country52 = new country() { };
+            //country country53 = new country() { };
+            //country country54 = new country() { };
+            //country country55 = new country() { };
+            //country country56 = new country() { };
+            //country country57 = new country() { };
+            //country country58 = new country() { };
+            //country country59 = new country() { };
+            //country country60 = new country() { };
+
+        }
+    }
+
+    public class country
+    {
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public  string capital { get; set; }
+    }
+}
+2)
+------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            country country1 = new country() { Code = "AUS", Name = "Australia", capital = "Canberra" };
+            country country2 = new country() { Code="AFG", Name ="Afghanistan", capital = "Kabul" };
+            country country3 = new country() { Code="ALB", Name= "Albania", capital = "Tirana" };
+            country country4 = new country() { Code ="ALG", Name ="Algeria" , capital ="Algiers" };
+            country country5 = new country() { Code ="AND", Name ="Andorra", capital =" AndorralaVella" };
+            country country6 = new country() { Code="ANG", Name ="Angola", capital ="Luanda" };
+            country country7 = new country() { Code = "ANT", Name = "AntiguaBarbuda:" , capital ="SaintJohn"};
+
+            Dictionary< string, country> DistionariesCountries = new Dictionary<string, country> ();
+            DistionariesCountries.Add( country1.Code, country1);
+            DistionariesCountries.Add(country2.Code, country2);
+            DistionariesCountries.Add(country3.Code, country3);
+            DistionariesCountries.Add(country4.Code, country4);
+            DistionariesCountries.Add(country5.Code, country5);
+            DistionariesCountries.Add(country6.Code, country6);
+            DistionariesCountries.Add(country7.Code, country7);
+
+            string UserChoice = string.Empty;
+            do
+            {
+                Console.WriteLine("Please enter the Country Code");
+                string strEnterCode = Console.ReadLine().ToUpper();
+                country resultCountry = DistionariesCountries.ContainsKey(strEnterCode) ?  DistionariesCountries[strEnterCode] : null; 
+            
+                if (resultCountry == null)
+                {
+                    Console.WriteLine("Code is not Valied !, please check");
+                }
+
+                else
+                {
+                    Console.WriteLine("Your selected coutry  thoer capital of : {0} , {1} ", resultCountry.Name, resultCountry.capital);
+                }
+                    do
+                    {
+                        Console.WriteLine("Do have Continue This Selection? YES OR NO");
+                    UserChoice = Console.ReadLine().ToUpper();
+
+                    } while ( UserChoice != "YES" &&  UserChoice != "NO");
+
+            } while ( UserChoice =="YES");
+
+        }
+    }
+
+    public class country
+    {
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public  string capital { get; set; }
+    }
+}
+
