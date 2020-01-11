@@ -1,0 +1,39 @@
+using System;
+
+namespace Equal_Tostring
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            customer Cus1 = new customer();
+            Cus1.FirstName = " Theepan";
+            Cus1.LastName = "Pradheepan";
+
+            customer Cus2= new customer();
+            Cus2.FirstName = " Theepan";
+            Cus2.LastName = "Pradheepan";
+
+            Console.WriteLine(Cus1 == Cus2);
+            Console.WriteLine(Cus1.Equals(Cus2));
+        }
+    }
+    public class customer
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public override bool Equals(object obj)
+        {
+            if (obj== null)
+            {
+                return false;
+            }
+            if(!(obj is customer))
+            {
+                return false;
+            }
+            return this.FirstName == ((customer)obj).FirstName &&
+                this.LastName == ((customer)obj).LastName;
+        }
+    }
+}
