@@ -1,0 +1,62 @@
+1)
+using System;
+namespace BubbleSort
+{
+    class MySort
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = { 78, 55, 45, 98, 13, 37,12,54,86,23,93,34};
+            sortiere(arr);
+            for (int i = 0; i < arr.Length; i++)
+            Console.Write(arr[i] +",");
+        }
+        public static  void  sortiere( int [] arr)
+        {
+            int temp;
+            for (int j = 0; j <= arr.Length - 2; j++)
+            {
+                for (int i = 0; i <= arr.Length - 2; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        temp = arr[i + 1];
+                        arr[i + 1] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+        }      
+    }
+} 
+
+2)------------------------------------------------------------------------------------------------------------
+using System;
+public class Bubble_Sort
+{
+    public static void Main(string[] args)
+    {
+        int[] a = { 3, 0, 2, 5, -1, 4, 1 };
+        int t;
+        Console.WriteLine("Original array :");
+        foreach (int aa in a)
+            Console.Write(aa + " ");
+        for (int p = 0; p <= a.Length - 2; p++)
+        {
+            for (int i = 0; i <= a.Length - 2; i++)
+            {
+                if (a[i] > a[i + 1])
+                {
+                    t = a[i + 1];
+                    a[i + 1] = a[i];
+                    a[i] = t;
+                }
+            }
+        }
+        Console.WriteLine("\n" + "Sorted array :");
+        foreach (int aa in a)
+            Console.Write(aa + " ");
+        Console.Write("\n");
+
+    }
+}
