@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp23
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           const double zinsatz = 0.015;
+            int startkapital = 1000;
+            double kapital = startkapital;
+            int jahre =0 ;
+
+            while (kapital < 5000)
+            {
+                kapital = kapital * (1 + zinsatz);
+                jahre ++;
+            }
+            Console.WriteLine("startkapita : " +" "+ Math.Round(kapital, 2) + "Euro");
+            Console.WriteLine("AnlageZeitraum : " + jahre);
+           
+        }
+    }
+}
