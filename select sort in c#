@@ -1,0 +1,77 @@
+1)
+using System;
+public class Example
+{
+    static void Main(string[] args)
+    {
+        int[] arr = new int[10] { 56, 1, 99, 67, 89, 23, 44, 12, 78, 34 };
+        int n = 10;
+        Console.WriteLine("Selection sort");
+        Console.Write("Initial array is: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(arr[i] + " ");
+        }
+        int temp, smallest;
+        for (int i = 0; i < n - 1; i++)
+        {
+            smallest = i;
+            for (int j = i + 1; j < n; j++)
+            {
+                if (arr[j] < arr[smallest])
+                {
+                    smallest = j;
+                }
+            }
+            temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
+        }
+        Console.WriteLine();
+        Console.Write("Sorted array is: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(arr[i] + " ");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+2)
+using System;
+
+namespace console_ex_1
+{
+    class Program
+    {
+       public static void Main(string[] args)
+        {
+            int[] list = { 4,1, 3, 2, 5, 8, 6, 9, 7, 0 };
+            sort(list);
+            for ( int i = 0; i < list.Length; i ++)
+    
+                Console.Write(list[i]  + ",");  
+        }
+
+       public static void sort(int[] arr)
+        {
+            int tepm, min;
+            for(int i = 0;  i < arr.Length -1 ;  i++)
+            {
+                min = i;
+              
+                for(int j=i+1 ; j<arr.Length; j++)
+                {
+                    if (arr [min] >  arr[j]) 
+                    {
+                        min = j;
+                    }
+                }
+                tepm = arr[i];
+                arr[i] = arr[min];
+                arr[min] = tepm;
+
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------
