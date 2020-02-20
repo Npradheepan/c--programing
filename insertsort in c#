@@ -1,0 +1,32 @@
+using System;
+
+namespace console_ex_1
+{
+    class Program
+    {
+       public static void Main(string[] args)
+        {
+            int[] list = { 4,1, 3, 2, 5, 8, 6, 9, 7, 0 };
+            sort(list);
+            for ( int i = 0; i < list.Length; i ++)
+    
+                Console.Write(list[i]  + ",");  
+        }
+
+       public static void sort(int[] arr)
+        {
+            int tepm,  j;
+            for(int i = 0;  i < arr.Length ;  i++)
+            {
+               j = i;
+               while(  j > 0  && (arr  [j-1] > arr [ j ] ))
+                {
+                    tepm = arr[ j ];
+                    arr[ j ] = arr[ j-1 ];
+                    arr[j - 1] = tepm;
+                    j--;
+                }
+            }
+        }
+    }
+}
