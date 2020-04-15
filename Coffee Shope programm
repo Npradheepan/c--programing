@@ -1,0 +1,73 @@
+
+using System;
+namespace Program_switch_goto
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int CountCoffee = 0;
+            First:
+            Console.WriteLine(" Please Select the Coffee : \n Small- 1, Medium- 2, Large- 3, EX-Large- 4");
+            int coffeechoice =int .Parse(Console.ReadLine());
+
+            switch (coffeechoice)
+            {
+                case 1:
+
+                    Console.WriteLine("Your Selectioin: Small ");
+                    CountCoffee += 1;
+                    break;
+
+                case 2:
+
+                    Console.WriteLine("Your Selectioin: Medium");
+                    CountCoffee += 2;
+                    break;
+
+                case 3:
+
+                    Console.WriteLine("Your Selectioin: Large ");
+                    CountCoffee += 3;
+                    break;
+
+                case 4:
+
+                    Console.WriteLine("Your Selectioin: EX-Large ");
+                    CountCoffee += 4;
+                    break;
+                default:
+
+                    Console.WriteLine("Selection Invalieds! your Section  is: {0} Please Select again ", coffeechoice);
+                    break;
+            }
+
+            SecondDecision:
+            Console.WriteLine("Would you like to again Purche another Coffee Yes or No");
+             string Customerdecision = Console.ReadLine().ToUpper();
+
+            switch (Customerdecision)
+                {
+                    case  "YES":
+                        goto First;
+
+                    case "NO":
+                        break;
+
+                    default:
+                        Console.WriteLine("Your Invalied Selection! {0} Pleaase Try Again", Customerdecision);
+                        goto SecondDecision;
+                }
+
+            Console.WriteLine("Thank For Your Purche Wel Come To Again!");
+            Console.WriteLine("Your Bill Amount ist {0}", CountCoffee);
+            Console.ReadKey();
+           
+            
+            
+
+
+         }
+    }
+}   
+    
