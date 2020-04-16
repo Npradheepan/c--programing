@@ -1,0 +1,94 @@
+using System;
+using System.Reflection;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Type T = Type.GetType("ConsoleApp3.Customer");
+            Console.WriteLine("Full Name = {0}", T.FullName);
+            Console.WriteLine("Full Name = {0}", T.Name);
+            Console.WriteLine("Full Name = {0}", T.Namespace);
+            Console.WriteLine( );
+
+            Console.WriteLine("Properties in Customer");
+            PropertyInfo[] properties = T.GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                Console.WriteLine(property.PropertyType.Name + " " + property.Name);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Methods in Customers Class");
+            MethodInfo[] methods =  T.GetMethods();
+            foreach(MethodInfo method in methods)
+            {
+                Console.WriteLine(method.ReturnType.Name +" "+ method.Name);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Constructors in Customers Class");
+            ConstructorInfo[] Constructors = T.GetConstructors();
+            foreach (ConstructorInfo Consrator in Constructors)
+            {
+                Console.WriteLine(Consrator.ToString());
+            }
+
+        }
+    }
+    public class Customer
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+            public Customer(int ID, string Name)
+            {
+                this.Id = ID;
+                this.Name = Name;
+            }
+            public Customer()
+            {
+                this.Id = -1;
+                this.Name = string.Empty;
+            }
+            public void PrintID()
+            {
+                Console.WriteLine("ID ={0}", this.Id);
+            }
+            public void PrintName()
+            {
+                Console.WriteLine("Name ={0}", this.Name);
+            }
+
+    }
+}
+
+output
+----------------------------------------------------------------------------------------------------------------------
+output:
+Full Name = Customer
+Full Name = ConsoleApp3
+
+Properties in Customer
+Int32 Id
+String Name
+
+Methods in Customers Class
+Int32 get_Id
+Void set_Id
+String get_Name
+Void set_Name
+Void PrintID
+Void PrintName
+Type GetType
+String ToString
+Boolean Equals
+Int32 GetHashCode
+
+Constructors in Customers Class
+Void .ctor(Int32, System.String)
+Void .ctor()
+
+Press any key to continue...
