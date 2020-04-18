@@ -38,6 +38,45 @@ public class Student
 	public int Age { get; set; }
 	public int StandardID { get; set; }
 }
+-------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+public class Program
+{
+    public static void Main()
+    { 
+        List<Employee> empList = new List<Employee>()
+            {
+                 new Employee() { ID = 1239, Name = "mary", Salary = 5000, Experience = 5 },
+                 new Employee() { ID = 1339, Name = "john", Salary = 4000, Experience = 4 },
+                 new Employee() { ID = 1238, Name = "gilli", Salary = 7000, Experience = 8 },
+                 new Employee() { ID = 1249, Name = "sure", Salary = 2000, Experience = 2 },
+                 new Employee() { ID = 1229, Name = "mamy", Salary = 8000, Experience = 10 },
+            };
+        Console.WriteLine("which The experience list you need to show!");
+        int Num = int.Parse(Console.ReadLine());
+        var employeeNames = empList.Where(s => s.Experience > Num)
+                                                     .Select(s => s);
+                                                   
+
+        foreach (var name in employeeNames)
+        {
+            Console.WriteLine("Name :{0}, Salary : {1},Experience:{2}", name.Name,name.ID,name.Salary);
+        }
+        Console.ReadKey();
+    }
+}
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+}
 
 2)----------------------------------------------------------------------------------------------------------------
 using System;
