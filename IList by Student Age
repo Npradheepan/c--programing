@@ -113,6 +113,52 @@ public class Student
 	public int Age { get; set; }
 	public int StandardID { get; set; }
 }
+-------------------------------------------Select by Experience From concerpt-------------------------------------------------------------------------
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+public class Program
+{
+    public static void Main()
+    {
+        // Student collection
+        List<Employee> empList = new List<Employee>()
+            {
+                 new Employee() { ID = 7623, Name = "mary", Salary = 5000, Experience = 5 },
+                 new Employee() { ID = 1339, Name = "john", Salary = 4000, Experience = 4 },
+                 new Employee() { ID = 8903, Name = "gilli", Salary = 7000, Experience = 8 },
+                 new Employee() { ID = 2354, Name = "sure", Salary = 2000, Experience = 2 },
+                 new Employee() { ID = 7893, Name = "hgfdh", Salary = 8000, Experience = 10 },
+                  new Employee() { ID = 8762, Name = "agsg", Salary = 2342, Experience = 1 },
+                 new Employee() { ID = 6543, Name = "wers", Salary = 85678, Experience = 3 },
+                 new Employee() { ID = 6781, Name = "sverrg", Salary = 334231, Experience = 6 },
+                 new Employee() { ID = 0890, Name = "bedr", Salary = 88968, Experience = 7 },
+                 new Employee() { ID = 8786, Name = "gbnfgns", Salary = 45455, Experience = 10 },
+            };
+        Console.WriteLine("You can selec your Range of Experience between two numbers!");
+        Console.WriteLine("Min Value");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Max Value");
+        int num2 = int.Parse(Console.ReadLine());
+        var LimitemployeeNames = from s in empList
+                                 where s.Experience > num1 && s.Experience < num2
+                                 select new { s = s.Experience,s.Name,s.Salary, s.ID };
+                                      
+
+        LimitemployeeNames.ToList().ForEach(s => Console.WriteLine("Name :{0}, Salary : {1},ID:{2}", s.Name,s.Salary,s.ID));
+        Console.ReadKey();
+    }
+}
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+}
 
 3)----------------------------------------------------------------------------------------------------------------
 using System;
