@@ -202,6 +202,53 @@ public class Student
 	public int Age { get; set; }
 	public int StandardID { get; set; }
 }
+--------------------------------------------------------------------------------------------------------------
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+public class Program
+{
+    public static void Main()
+    {
+        // Student collection
+        List<Employee> empList = new List<Employee>()
+        {
+                 new Employee() {Employee_ID = 7623,  Employee_Name = "mary", Salary = 5000, Experience = 5 },
+                 new Employee() { Employee_ID  = 1339, Employee_Name = "john", Salary = 4000, Experience = 4 },
+                 new Employee() { Employee_ID  = 8903, Employee_Name = "gilli", Salary = 7000, Experience = 8 },
+                 new Employee() { Employee_ID  = 2354, Employee_Name = "sure", Salary = 2000, Experience = 2 },
+                 new Employee() { Employee_ID  = 7893, Employee_Name = "John", Salary = 8000, Experience = 10 },
+                  new Employee() { Employee_ID  = 8762, Employee_Name = "Steve", Salary = 2342, Experience = 1 },
+                 new Employee() { Employee_ID  = 6543, Employee_Name = "Bill", Salary = 85678, Experience = 3 },
+                 new Employee() { Employee_ID  = 6781, Employee_Name = "Ram", Salary = 334231, Experience = 6 },
+                 new Employee() { Employee_ID  = 0890, Employee_Name = "Müller", Salary = 88968, Experience = 7 },
+                 new Employee() { Employee_ID  = 8786, Employee_Name = "Ron", Salary = 45455, Experience = 10 },
+        };
+
+        var EmployeeGroupByStandard = from s in empList
+                                      group s by s.Employee_ID into eg
+                                      orderby eg.Key
+                                      select new { eg.Key, eg };
+
+
+        foreach (var group in EmployeeGroupByStandard)
+        {
+            Console.WriteLine("Employee_ID {0}:", group.Key);
+
+            group.eg.ToList().ForEach(emp => Console.WriteLine("Name:{0},Experience :{1},Salary:{2}", emp.Employee_Name,emp.Experience,emp.Salary));
+        }
+        Console.ReadKey();
+    }
+}
+public class Employee
+{
+    public int Employee_ID { get; set; }
+    public string Employee_Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+}
 
 4)----------------------------------------------------------------------------------------------------------------
 	using System;
