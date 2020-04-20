@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+public class programm
+{
+    public static void main(string[] args)
+    {
+        Employee[] employeeArra =
+           {
+                 new Employee() { ID = 1239, Name = "mary", Salary = 5000, Experience = 5 },
+                 new Employee() { ID = 1339, Name = "john", Salary = 4000, Experience = 4 },
+                 new Employee() { ID = 1238, Name = "gilli", Salary = 8000, Experience = 8 },
+                 new Employee() { ID = 1249, Name = "sure", Salary = 2000, Experience = 2 },
+                 new Employee() { ID = 1229, Name = "mamy", Salary = 9000, Experience = 10 },
+            };
+        Employee[] employees = new Employee[5];
+        int i = 0;
+        foreach (Employee employeed in employees)
+        {
+            if (employeed.Salary > 5000 && employeed.Salary < 8000)
+            {
+                employees[i] = employeed;
+                i++;
+
+            }
+        }
+        Console.ReadKey();
+    }
+}
+public  class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+}
