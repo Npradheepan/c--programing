@@ -55,3 +55,75 @@ namespace Dictionary
         public int Salary { get; set; }
     }
 }
+-----------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Dictionary
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Custommer custommer1 = new Custommer()
+            {
+                ID = 101,
+                Name = "Theepan",
+                Salary = 10000,
+            };
+            Custommer custommer2 = new Custommer()
+            {
+                ID = 102,
+                Name = "Kala",
+                Salary = 2500,
+            };
+            Custommer custommer3 = new Custommer()
+            {
+                ID = 103,
+                Name = "Rahaf",
+                Salary = 5000,
+            };
+            Dictionary<int, Custommer> CustomerDictionary = new Dictionary<int, Custommer>();
+            CustomerDictionary.Add(custommer1.ID, custommer1);
+            CustomerDictionary.Add(custommer2.ID, custommer2);
+            CustomerDictionary.Add(custommer3.ID, custommer3);
+            Custommer custommer_value = CustomerDictionary[103];
+
+            foreach (KeyValuePair<int, Custommer> customerkeyValuePair in CustomerDictionary)
+            {
+                Console.WriteLine("key ={0} ", customerkeyValuePair.Key);
+                Custommer cust = customerkeyValuePair.Value;
+               Console.WriteLine("ID = {0},Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+                Console.WriteLine("\n");
+           }
+            Console.WriteLine("ID = {0},Name = {1},Salary ={2}", custommer_value.ID, custommer_value.Name, custommer_value.Salary);
+
+                //foreach(Custommer cus in CustomerDictionary.Values)
+                //{
+                //    Console.WriteLine("Name{0},Id{1},salary{2}", cus.Name, cus.ID, cus.Salary);
+                //}
+
+                //Dictionary<int, Custommer> dictioaryCustommers = new Dictionary<int, Custommer>();
+                //dictioaryCustommers.Add(custommer1.ID, custommer1);
+                //dictioaryCustommers.Add(custommer2.ID, custommer2);
+                //dictioaryCustommers.Add(custommer3.ID, custommer3);
+
+                //Custommer custommer103 = dictioaryCustommers[103];
+                //foreach (KeyValuePair<int, Custommer> customerkeyValuePair in dictioaryCustommers)
+                //{
+                //    Console.WriteLine("key ={0} ", customerkeyValuePair.Key);
+                //    Custommer cust = customerkeyValuePair.Value;
+                //    Console.WriteLine("ID = {0},Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+                //    Console.WriteLine("\n");
+                //}
+                // Console.WriteLine("ID = {0},Name = {1},Salary ={2}", custommer103.ID, custommer103.Name, custommer103.Salary);
+        }
+    }
+
+    public class Custommer
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+    }
+}
