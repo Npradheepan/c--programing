@@ -24,3 +24,22 @@ public class Student
         Console.WriteLine("Standard: {0}", this.StandardID);
     }
 }
+----------------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        PrintValue("Hello World!!");
+        PrintValue(100);
+        PrintValue(100.50);
+        PrintValue(true);
+        PrintValue(DateTime.Now);
+    }
+
+    public static void PrintValue(dynamic val)
+    {
+        Console.WriteLine(val);
+    }
+}
