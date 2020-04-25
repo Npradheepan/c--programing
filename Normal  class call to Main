@@ -1,0 +1,28 @@
+using System;
+
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+    public int Age { get; set; }
+    public int StandardID { get; set; }
+
+    public void DisplayStudentDetail()
+    {
+        Console.WriteLine("Name: {0}", this.StudentName);
+        Console.WriteLine("Age: {0}", this.Age);
+        Console.WriteLine("Standard: {0}", this.StandardID);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Student std = new Student();
+        std.DisplayStudentDetail();
+
+        //dynamic dynamicStudent = new Student();
+        //dynamicStudent.FakeMethod();
+    }
+}
