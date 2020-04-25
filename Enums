@@ -46,4 +46,68 @@ public class Customer
     public string Name { get; set; }
     public int Gender { get; set; }
 }
+----------------------------------------------------------------------------------------------------------------------------
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine(Enum.GetName(typeof(WeekDays), 4));
+
+		Console.WriteLine("WeekDays constant names:");
+
+		foreach (string str in Enum.GetNames(typeof(WeekDays)))
+			Console.WriteLine(str);
+
+		Console.WriteLine("Enum.TryParse():");
+
+		WeekDays wdEnum;
+
+		Enum.TryParse<WeekDays>("1", out wdEnum);
+
+		Console.WriteLine(wdEnum);
+
+	}
+}
+
+enum WeekDays
+{
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday,
+	Sunday
+}
+------------------------------------------------------------------------------------------------------------------------------
+using System;
+namespace Tutlane
+{
+    class Program
+    {
+        enum Week
+        {
+            Sunday,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Week Enumeration Values");
+            foreach (string w in Enum.GetNames(typeof(Week)))
+            {
+                Console.WriteLine(w);
+            }
+            Console.WriteLine("\nPress Any Key to Exit..");
+            Console.ReadLine();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
 
