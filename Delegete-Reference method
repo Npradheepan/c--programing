@@ -39,3 +39,47 @@ namespace Console_delegete
         }
     }
 }
+------------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+public delegate void SampleMethod();
+
+public class Programm
+{
+    public static void Main (string[] args)
+    {
+        SampleMethod del = new SampleMethod(SampleMethod);
+
+        del += SampleMethodOne;
+        del += SampleMethodTwo;
+        del += SampleMethodThree;
+        del();
+
+            //SampleMethod del1, del2, del3,del4;
+            //    del1 = new SampleMethod(SampleMethodOne);
+            //    del2 = new SampleMethod(SampleMethodTwo);
+            //     del3 = new SampleMethod(SampleMethodThree);
+
+            //del4 = del1+del2+del3;
+            //del4();    
+    }
+
+    public static void SampleMethod()
+    {
+        Console.WriteLine("Sample Method invoke");
+    }
+    public static void SampleMethodOne()
+    {
+         Console.WriteLine ("Sample MethodOne invoke");   
+    }
+    public static void SampleMethodTwo()
+    {
+        Console.WriteLine("Sample MethodTwo invoke");      
+    }
+    public static void SampleMethodThree()
+    {
+        Console.WriteLine("Sample MethodThree invoke");
+        Console.ReadKey();
+    }
+
+}
